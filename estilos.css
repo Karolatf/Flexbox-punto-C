@@ -1,0 +1,126 @@
+*{
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+
+    /* background-image: url( https://www.galileo.edu/idea/files/2023/09/Turismo-1.jpg ); */
+    background-image: linear-gradient(to top, #e4a9d47f 0%, #90b5ec9c 100%), url( https://www.galileo.edu/idea/files/2023/09/Turismo-1.jpg );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:  center;
+ 
+}   
+
+/* 1 Punto de la Guia */
+.nav {
+  position: relative;
+  z-index: 1;                   /* Asegura que la barra esté sobre el overlay */
+  display: flex;                /* Actir flexbox */
+  justify-content: space-between; 
+  align-items: center;          /* Centrado vertical */
+  padding: 20px 30px;
+  background-color: #5757b5e8;
+  color: #fff;
+}
+
+/* Logo */
+.nav__logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Menú */
+.nav__menu {
+  display: flex;       /* Los items del menú en fila */
+  gap: 30px;           /* Espacio entre elementos */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Items del menú */
+.nav__link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #66f98a; /* Efecto hover */
+}
+
+/* 2 Punto Tarjeta de producto con Flexbox y BEM */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  max-width: 320px;
+  margin: 40px auto;
+  padding: 24px;
+  gap: 18px;
+}
+.product-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.product-card__description {
+  text-align: center;
+}
+.product-card__title {
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  font-weight: bold;
+}
+.product-card__text {
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+.product-card__button {
+  background: #5757b5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.product-card__button:hover {
+  background: #66f98a;
+  color: #333;
+}
+/*  3 Punto galería de imágenes con Flexbox y BEM */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  max-width: 1100px;
+  margin: 100px auto 40px auto; /* 100px arriba para separar del nav */
+  justify-content: center;
+}
+.gallery__item {
+  flex: 1 1 220px;
+  max-width: 220px;
+  min-width: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
