@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Sidebar de navegación -->
+  <aside class="sidebar">
+    <ul class="sidebar__menu">
+      <li><a href="#"><i class='bx bx-home'></i></a></li>
+      <li><a href="#"><i class='bx bx-category'></i></a></li>
+      <li><a href="#"><i class='bx bx-star'></i></a></li>
+      <li><a href="#"><i class='bx bx-cog'></i></a></li>
+    </ul>
+  </aside>
+
+  <nav class="nav">
+    <div class="nav__logo">
+      <i class='bx bxs-plane-alt'></i>
+    </div>
+
+    <!-- Checkbox oculto para controlar el menú hamburguesa -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Tu menú principal -->
+    <ul class="nav__menu">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="servicios.html" class="nav__link">Servicios</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+      <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container">
+
+    <!-- Sección Nosotros con encabezado justificado -->
+    <section class="about">
+      <div class="about__header">
+        <i class='bx bx-user-circle about__icon'></i>
+        <h2 class="about__title">Sobre Nosotros</h2>
+      </div>
+      <p class="about__text">
+        Somos una empresa dedicada a promover los destinos turísticos más hermosos de Colombia. Nuestro equipo está comprometido con brindar experiencias únicas y auténticas a cada viajero, resaltando la riqueza natural y cultural de nuestro país.
+      </p>
+    </section>
+
+    <!-- Separador visual -->
+    <div class="about-divider">
+      <span class="about-divider__line"></span>
+      <span class="about-divider__icon"><i class='bx bx-message-dots'></i></span>
+      <span class="about-divider__line"></span>
+    </div>
+
+    <!-- Sección de testimonios -->
+    <section class="testimonials-section">
+      <h3 class="testimonials-section__title">
+        <i class='bx bx-happy'></i> Testimonios de personas que han viajado con nosotros
+      </h3>
+      <div class="testimonial">
+        <div class="testimonial__avatar">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar cliente">
+        </div>
+        <div class="testimonial__content">
+          <p class="testimonial__text">
+            “¡Una experiencia inolvidable! El viaje estuvo perfectamente organizado y los guías fueron muy atentos. Recomiendo totalmente esta agencia para descubrir Colombia.”
+          </p>
+          <span class="testimonial__author">— Juan Pérez, viajero</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__avatar">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar cliente">
+        </div>
+        <div class="testimonial__content">
+          <p class="testimonial__text">
+            “El destino fue maravilloso y la atención del equipo superó mis expectativas. Sin duda volveré a viajar con ustedes.”
+          </p>
+          <span class="testimonial__author">— María Gómez, turista</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__avatar">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Avatar cliente">
+        </div>
+        <div class="testimonial__content">
+          <p class="testimonial__text">
+            “Me sentí seguro y acompañado en todo momento. Los paisajes y actividades fueron increíbles. ¡Gracias por todo!”
+          </p>
+          <span class="testimonial__author">— Carlos Ramírez, aventurero</span>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- FIN CONTAINER -->
+
+  <!-- Footer con tres columnas -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h4 class="footer__title">Contacto</h4>
+      <p>Email: karoln.oficiall@gmail.com</p>
+      <p>Tel: +57 302 655 5458</p>
+    </div>
+    <div class="footer__column">
+      <h4 class="footer__title">Enlaces útiles</h4>
+      <ul class="footer__links">
+        <li><a href="https://colombia.travel/" target="_blank">Turismo Colombia</a></li>
+        <li><a href="https://www.who.int/es" target="_blank">Salud para viajeros</a></li>
+        <li><a href="https://www.accuweather.com/es/co/colombia-weather" target="_blank">Clima en Colombia</a></li>
+        <li><a href="https://www.lonelyplanet.com/colombia" target="_blank">Guía Lonely Planet</a></li>
+      </ul>
+    </div>
+    <div class="footer__column">
+      <h4 class="footer__title">Síguenos</h4>
+      <div class="footer__social">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

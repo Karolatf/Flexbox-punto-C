@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Sidebar de navegación -->
+    <aside class="sidebar">
+        <ul class="sidebar__menu">
+            <li><a href="#"><i class='bx bx-home'></i></a></li>
+            <li><a href="#"><i class='bx bx-category'></i></a></li>
+            <li><a href="#"><i class='bx bx-star'></i></a></li>
+            <li><a href="#"><i class='bx bx-cog'></i></a></li>
+        </ul>
+    </aside>
+
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="nav__logo">
+            <i class='bx bxs-plane-alt'></i>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú hamburguesa -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Tu menú principal -->
+        <ul class="nav__menu">
+            <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+            <li class="nav__item"><a href="servicios.html" class="nav__link">Servicios</a></li>
+            <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+            <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+        <!-- Formulario de contacto -->
+        <section class="contact">
+            <h2 class="contact__title">Contáctanos</h2>
+            <form class="contact__form">
+                <div class="contact__row">
+                    <div class="contact__column">
+                        <label for="nombre" class="contact__label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="contact__input" required>
+                    </div>
+                    <div class="contact__column">
+                        <label for="email" class="contact__label">Email</label>
+                        <input type="email" id="email" name="email" class="contact__input" required>
+                    </div>
+                </div>
+                <div class="contact__row">
+                    <div class="contact__column">
+                        <label for="telefono" class="contact__label">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="contact__input">
+                    </div>
+                    <div class="contact__column">
+                        <label for="asunto" class="contact__label">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" class="contact__input">
+                    </div>
+                </div>
+                <div class="contact__row">
+                    <div class="contact__column contact__column--full">
+                        <label for="mensaje" class="contact__label">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" class="contact__input" rows="4" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="contact__button">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer con tres columnas -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h4 class="footer__title">Contacto</h4>
+            <p>Email: karoln.oficiall@gmail.com</p>
+            <p>Tel: +57 302 655 5458</p>
+        </div>
+        <div class="footer__column">
+            <h4 class="footer__title">Enlaces útiles</h4>
+            <ul class="footer__links">
+                <li><a href="https://colombia.travel/" target="_blank">Turismo Colombia</a></li>
+                <li><a href="https://www.who.int/es" target="_blank">Salud para viajeros</a></li>
+                <li><a href="https://www.accuweather.com/es/co/colombia-weather" target="_blank">Clima en Colombia</a></li>
+                <li><a href="https://www.lonelyplanet.com/colombia" target="_blank">Guía Lonely Planet</a></li>
+            </ul>
+        </div>
+        <div class="footer__column">
+            <h4 class="footer__title">Síguenos</h4>
+            <div class="footer__social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

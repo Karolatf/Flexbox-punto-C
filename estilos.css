@@ -1,7 +1,10 @@
-*{
-    font-family: 'Montserrat', Arial, sans-serif;
-}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
 
 body {
     height: 100%;
@@ -9,12 +12,11 @@ body {
     padding: 0;
     min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
 
-    /* background-image: url( https://www.galileo.edu/idea/files/2023/09/Turismo-1.jpg ); */
+
     background-image: linear-gradient(to top, #e4a9d47f 0%, #90b5ec9c 100%), url( https://www.galileo.edu/idea/files/2023/09/Turismo-1.jpg );
     background-size: cover;
     background-repeat: no-repeat;
     background-position:  center;
- 
 }   
 
 /* 1 Punto de la Guia */
@@ -64,7 +66,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   max-width: 320px;
-  margin: 40px auto;
+  margin: 40px auto 0 auto;
   padding: 24px;
   gap: 18px;
 }
@@ -101,26 +103,611 @@ body {
   background: #66f98a;
   color: #333;
 }
-/*  3 Punto galería de imágenes con Flexbox y BEM */
 
+/*  3 Punto galería de imágenes con Flexbox y BEM */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
   max-width: 1100px;
-  margin: 100px auto 40px auto; /* 100px arriba para separar del nav */
+  margin: 55px auto 40px auto;
   justify-content: center;
 }
 .gallery__item {
-  flex: 1 1 220px;
-  max-width: 220px;
-  min-width: 180px;
+  display: flex;
+  flex-direction: column; /* Apila imagen y texto verticalmente */
+  align-items: center;
+  justify-content: flex-start; /* El contenido inicia arriba */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   background: #fff;
+  height: 180px; /* Aumenta la altura para el texto */
+  padding-bottom: 10px; /* Espacio para el texto */
+}
+.gallery__item p {
+  margin: 12px 12px 0 12px;   
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+.gallery__img {
+  width: 100%;
+  height: 150px;      /* O menos, pero NO 100% */
+  object-fit: cover;
+  display: block;
+}
+
+/* 4 Punto Formulario de contacto */
+.contact {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.contact__title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact__row {
+  display: flex;
+  gap: 16px;
+}
+.contact__column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.contact__column--full {
+  flex: 2;
+}
+.contact__label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.contact__input {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.contact__button {
+  margin-top: 12px;
+  padding: 10px 0;
+  background: #2e6a8b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact__button:hover {
+  background: #25326d;
+}
+@media (max-width: 600px) {
+  .contact__row {
+    flex-direction: column;
+  }
+}
+
+/* 5 Punto Sección Nosotros con ícono y texto justificados.  */
+.about {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.about__header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.about__icon {
+  font-size: 2.2rem;
+  color: #25c269;
+}
+.about__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.about__text {
+  font-size: 1.1rem;
+  text-align: center;
+}
+/* 6 Punto Lista de tareas con items centrados y espaciados uniformes */
+
+/* Sección principal para centrar y espaciar */
+.home-main {
+  max-width: 700px;
+  margin: 48px auto 64px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+/* Separador visual */
+.home-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+  margin: 32px 0 32px 0;
+}
+.home-divider__line {
+  flex: 1;
+  height: 2px;
+  background: #14148a;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.home-divider__icon {
+  color: #1d1db8;
+  font-size: 2rem;
+  padding: 0 8px;
+}
+
+/* Más espacio inferior a la lista de tareas */
+.tasks {
+  max-width: 400px;
+  margin: 0 auto 32px auto;
+  padding: 24px 28px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(87,87,181,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks__title {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+.tasks__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tasks__item {
+  font-size: 1.08rem;
+  background: #e6f4ea;
+  padding: 8px 18px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #256d46;
+  box-shadow: 0 1px 4px rgba(46,139,87,0.05);
+  margin: 0 auto 15px auto;
+}
+
+.tasks__item i {
+  color: #2e8b57;
+  font-size: 1.2rem;
+}
+
+
+/* Separador visual para sección Nosotros */
+.about-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+  margin: 40px 0 32px 0;
+}
+.about-divider__line {
+  flex: 1;
+  height: 2px;
+  background: #0e0e62;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.about-divider__icon {
+  color: #5757b5;
+  font-size: 2rem;
+  padding: 0 8px;
+}
+
+/* 7 Punto Sección de testimonios */
+.testimonials-section {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials-section__title {
+  font-size: 1.3rem;
+  font-weight: 750;
+  color: #043e7c;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+/* Testimonial individual */
+.testimonial {
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(87,87,181,0.08);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 22px 28px;
+  margin-bottom: 24px;
+}
+
+.testimonial__avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2e8b57;
+}
+
+.testimonial__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.testimonial__text {
+  font-size: 1.08rem;
+  color: #333;
+  margin: 0;
+  font-style: italic;
+}
+
+.testimonial__author {
+  font-size: 0.98rem;
+  color: #2e8b57;
+  font-weight: 500;
+}
+
+/* 8 Punto Footer con tres columnas */
+.footer {
+  display: flex;
+  justify-content: center; /* Centra las columnas */
+  align-items: flex-start;
+  background: #5757b5f9;
+  color: #fff;
+  padding: 36px 24px 20px 24px;
+  gap: 48px; 
+  flex-wrap: wrap;
+  text-align: center; 
+}
+
+.footer__column {
+  flex: 1 1 0;
+  min-width: 180px;
+  margin: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.footer__title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #ffd700;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li {
+  margin-bottom: 8px;
+}
+
+.footer__links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: #ffd700;
+}
+
+.footer__social a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 12px;
+  transition: color 0.2s;
+}
+
+.footer__social a:hover {
+  color: #ffd700;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer__column {
+    margin-bottom: 24px;
+  }
+}
+
+/* Separador visual para sección de precios */
+.services-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+  margin: 48px 0 32px 0;
+}
+.services-divider__line {
+  flex: 1;
+  height: 2px;
+  background: #08086b;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.services-divider__icon {
+  color: #121260;
+  font-size: 2rem;
+  padding: 0 8px;
+}
+/* 9 Punto Sección de precios */
+.pricing-section {
+  max-width: 1100px;
+  margin: 0 auto 48px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+.pricing-section__title {
+  font-size: 2rem;
+  color: #422e8b;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+/* Tarjetas de precios alineadas horizontalmente */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(46,139,87,0.08);
+  padding: 32px 28px;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pricing-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(46,139,87,0.15);
+}
+
+.pricing-card__plan {
+  font-size: 1.3rem;
+  color: #043e7c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.pricing-card__price {
+  font-size: 2rem;
+  color: #2e8b57;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  color: #333;
+  font-size: 1rem;
+  text-align: left;
+}
+.pricing-card__features li {
+  margin-bottom: 8px;
+  padding-left: 1em;
+  position: relative;
+}
+.pricing-card__features li:before {
+  content: "✔";
+  color: #2e8b57;
+  position: absolute;
+  left: 0;
+  font-size: 1em;
+}
+
+.pricing-card__button {
+  background: #2e8b57;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.pricing-card__button:hover {
+  background: #043e7c;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .pricing-cards {
+    gap: 20px;
+  }
+  .pricing-card {
+    min-width: 220px;
+    padding: 24px 12px;
+  }
+}
+@media (max-width: 700px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .pricing-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+/* 10 Punto Sidebar de navegación */
+/* Sidebar normal escritorio */
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 15px; /* ahora al lado izquierdo */
+  transform: translateY(-50%);
+  background: rgba(87, 87, 181, 0.95);
+  border-radius: 16px;
+  padding: 10px 6px;
+  z-index: 900;
+}
+
+/* Sidebar en móviles → más pequeño */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateY(-50%) scale(0.8);
+    left: 5px;
+  }
+}
+
+.sidebar__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.sidebar__menu li a {
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar__menu li a:hover {
+  background: #66f98a;
+  color: #333;
+}
+
+
+
+/* ====== MENÚ HAMBURGUESA ====== */
+.menu-toggle {
+  display: none; /* ocultamos el checkbox */
+}
+.menu-icon {
+  display: none; /* solo en móviles */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  margin-left: auto;
+  z-index: 1100; /* siempre arriba */
+}
+.menu-icon span {
+  width: 22px;   /* más delgado */
+  height: 2.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ====== Versión móviles ====== */
+@media (max-width: 768px) {
+  .nav {
+    justify-content: space-between;
+  }
+  /* Menú horizontal oculto */
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -220px; /* escondido */
+    width: 220px;
+    height: 100vh;
+    background: rgba(87, 87, 181, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  /* Mostramos hamburguesa */
+  .menu-icon {
+    display: flex;
+  }
+  /* Mostrar menú al activar checkbox */
+  .menu-toggle:checked ~ .nav__menu {
+    right: 0;
+  }
+}
+
+
+/* ====== AJUSTES RESPONSIVE EXTRA (Paso 3) ====== */
+@media (max-width: 480px) {
+  .nav {
+    padding: 12px 16px;
+  }
+  .gallery__item {
+    height: auto;
+  }
+  .gallery__img {
+    height: 120px;
+  }
+  .contact, .about, .tasks, .testimonials-section, .pricing-card {
+    padding: 16px;
+  }
 }
